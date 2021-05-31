@@ -47,9 +47,22 @@ var ExtractFeaturesTask = /** @class */ (function () {
                 return false;
             }
             var toPrint = ExtractFeaturesTask.featuresToString(features);
+
+            // fs.writeFileSync('data/ts_dataset/val_raw.txt', '')
+
             for (var i = 0; i < toPrint.length; i++) {
                 console.log(toPrint[i]);
+                // console.log(filePath);
+                // if (filePath.contains('val_dir')){
+                    fs.appendFileSync('data/ts_dataset/val_raw.txt', filePath)
+                    fs.appendFileSync('data/ts_dataset/val_raw.txt', '\n')
+                    fs.appendFileSync('data/ts_dataset/val_raw.txt', toPrint[i])
+                    fs.appendFileSync('data/ts_dataset/val_raw.txt', '\n')
+                // }
+
+
             }
+
         }
         catch (e) {
             var e_msg = new Date().toLocaleString() + ": Exception in file:\n\t\t\t\t\t\t" + filePath + ": \"" + e + "\"\n";

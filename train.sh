@@ -21,4 +21,4 @@ model_dir=models/${type}
 
 mkdir -p models/${model_dir}
 set -e
-python3 -u id2vec.py --data ${data} --test ${test_data} --save ${model_dir}/saved_model
+python3 -u id2vec.py --export_code_vectors --data ${data} --test ${test_data} --save ${model_dir}/saved_model
